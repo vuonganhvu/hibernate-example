@@ -47,6 +47,12 @@ public class ExampleController {
         return tasks;
     }
 
+    @GetMapping("/task-join")
+    public Object getTaskJoin(){
+        List<TaskEntity> tasks = taskRepository.testQuery();
+        return tasks;
+    }
+
     @GetMapping("/task-detail")
     public Object getTaskDetailAll(){
         List<TaskDetailEntity> taskDetails = taskDetailRepository.findAll();
@@ -58,7 +64,7 @@ public class ExampleController {
     public Object postTaskDetail(@PathVariable("task-id") Long taskId){
         TaskDetailEntity taskDetail = new TaskDetailEntity();
         taskDetail.setName("Task ");
-        taskDetail.setTask(taskRepository.findById(taskId).orElseGet(null));
+//        taskDetail.setTask(taskRepository.findById(taskId).orElseGet(null));
         taskDetailRepository.save(taskDetail);
         return "Ok";
     }

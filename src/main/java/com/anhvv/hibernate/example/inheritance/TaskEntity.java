@@ -2,9 +2,10 @@ package com.anhvv.hibernate.example.inheritance;
 
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -19,6 +20,9 @@ public class TaskEntity {
     private String name;
     private String description;
 
-    @OneToMany(mappedBy = "task")
+    @OneToMany(mappedBy = "task",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
     private List<TaskDetailEntity> taskDetails;
 }

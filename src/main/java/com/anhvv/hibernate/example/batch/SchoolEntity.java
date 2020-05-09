@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 public class SchoolEntity {
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
 }

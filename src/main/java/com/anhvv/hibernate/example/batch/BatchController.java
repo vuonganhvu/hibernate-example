@@ -25,6 +25,7 @@ public class BatchController {
             schoolEntities.add(schoolEntity);
         }
         schoolRepository.saveAll(schoolEntities);
+
         return ResponseEntity.ok("OK");
     }
 }

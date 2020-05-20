@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  mysql-development:
+    image: mysql:5.7.22
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+    ports:
+      - "3308:3306"

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 public class SchoolEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     private String name;
 }

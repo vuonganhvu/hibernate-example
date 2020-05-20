@@ -2,6 +2,7 @@ package com.anhvv.hibernate.example.batch;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,13 @@ public class BatchController {
 
     private final SchoolRepository schoolRepository;
 
-    @PostMapping("/school")
+    @PostMapping("/insert")
+    @Transactional
     public ResponseEntity createBatchSchool(){
         List<SchoolEntity> schoolEntities = new ArrayList<>();
         for(int i =0; i < 10; i++) {
             SchoolEntity schoolEntity = new SchoolEntity();
+            schoolEntity.setId((long) i);
             schoolEntity.setName("Name " + i);
             schoolEntities.add(schoolEntity);
         }

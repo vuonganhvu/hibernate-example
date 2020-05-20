@@ -20,6 +20,6 @@ public class CompositeController {
     @GetMapping("/test")
     public ResponseEntity getComposite(){
         List<Object[]> rest = subjectRepository.getComposite();
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok(rest);
     }
 }

@@ -47,45 +47,5 @@ public class StudentSubjectMapEntity {
         public int hashCode() {
             return Objects.hash(studentId, subjectId);
         }
-
-        public Long getStudentId() {
-            return studentId;
-        }
-
-        public void setStudentId(Long studentId) {
-            this.studentId = studentId;
-        }
-
-        public Long getSubjectId() {
-            return subjectId;
-        }
-
-        public void setSubjectId(Long subjectId) {
-            this.subjectId = subjectId;
-        }
-    }
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public Long getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Long subjectId) {
-        this.subjectId = subjectId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
